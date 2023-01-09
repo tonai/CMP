@@ -43,6 +43,25 @@ tarteaucitron.init({
   "mandatoryCta": true /* Show the disabled accept button when mandatory on */
 });
 </script>
+<script>
+tarteaucitron.services.pianoanalytics = {
+  "key": "pianoanalytics",
+  "type": "analytic",
+  "name": "Piano analytics",
+  "needConsent": true,
+  "cookies": ['todo'],
+  "js": function () {
+    "use strict";
+    console.log('accep')
+  },
+  "fallback": function () {
+    "use strict";
+    console.log('decline')
+  }
+};
+
+(tarteaucitron.job = tarteaucitron.job || []).push('mycustomservice');
+</script>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
