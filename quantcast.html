@@ -44,15 +44,20 @@ tarteaucitron.init({
 });
 </script>
 <script>
-tarteaucitron.services.pianoanalytics = {
-  "key": "pianoanalytics",
+tarteaucitron.services.googleanalytics = {
+  "key": "googleanalytics",
   "type": "analytic",
-  "name": "Piano analytics",
+  "name": "Google analytics",
   "needConsent": true,
   "cookies": ['todo'],
   "js": function () {
     "use strict";
-    console.log('accep')
+    console.log('accept')
+    dataLayer.push({
+      "event": "axeptio_update",
+      "axeptio_authorized_vendors": ["google_analytics"],
+      "gtm.uniqueEventId": 3
+    })
   },
   "fallback": function () {
     "use strict";
