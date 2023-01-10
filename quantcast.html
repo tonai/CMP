@@ -44,8 +44,8 @@ tarteaucitron.init({
 });
 </script>
 <script>
-tarteaucitron.services.googleanalytics = {
-  "key": "googleanalytics",
+tarteaucitron.services.customgoogleanalytics = {
+  "key": "customgoogleanalytics",
   "type": "analytic",
   "name": "Google analytics",
   "needConsent": true,
@@ -62,6 +62,7 @@ tarteaucitron.services.googleanalytics = {
   "fallback": function () {
     "use strict";
     console.log('decline')
+    tarteaucitron.fallback(['myServiceError'], tarteaucitron.engage("customgoogleanalytics"));
   }
 };
 
@@ -74,5 +75,6 @@ tarteaucitron.services.googleanalytics = {
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
   Hello world!
+  <div class="myServiceError"></div>
 </body>
 </html>
